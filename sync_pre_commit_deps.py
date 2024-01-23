@@ -18,7 +18,6 @@ def main(argv: Sequence[str] | None = None) -> int:
     # TODO - support round-tripping
     yaml = ruamel.yaml.YAML()
     yaml.preserve_quotes = True
-    yaml.indent(mapping=2, sequence=4, offset=2)
 
     with open(filename) as f:
         loaded = yaml.load(f)
