@@ -15,11 +15,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
     filename: str = args.filename
 
-    # match pre-commit config as documented
     # TODO - support round-tripping
     yaml = ruamel.yaml.YAML()
     yaml.preserve_quotes = True
-    yaml.indent(mapping=4, sequence=4)
+    yaml.indent(mapping=2, sequence=2, offset=0)
 
     with open(filename) as f:
         loaded = yaml.load(f)
